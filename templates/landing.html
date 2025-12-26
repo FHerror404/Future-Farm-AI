@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Future Farming AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Future Farming AI</a>
+    <div>
+      <a href="/login" class="btn btn-light btn-sm me-2">Login</a>
+      <a href="/signup" class="btn btn-outline-light btn-sm">Signup</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-center text-white">
+  <div class="container">
+    <h1 class="fw-bold display-5">Smart Crop Disease Detection</h1>
+    <p class="lead mt-3">
+      Detect crop diseases using AI and get instant treatment recommendations.
+    </p>
+    <a href="/signup" class="btn btn-light btn-lg mt-3">
+      Get Started
+    </a>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="container my-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Key Features</h2>
+    <p class="text-muted">Designed for simple and smart farming decisions</p>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card feature-card text-center shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-camera-fill feature-icon"></i>
+          <h5 class="mt-3">Disease Detection</h5>
+          <p class="text-muted">
+            Upload leaf images to detect crop diseases instantly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card feature-card text-center shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-thermometer-sun feature-icon"></i>
+          <h5 class="mt-3">Weather Insights</h5>
+          <p class="text-muted">
+            Get weather information to understand disease risks.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card feature-card text-center shadow-sm">
+        <div class="card-body">
+          <i class="bi bi-journal-medical feature-icon"></i>
+          <h5 class="mt-3">Treatment Advice</h5>
+          <p class="text-muted">
+            Receive recommended actions and prevention tips.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-success text-white text-center py-3">
+  <small>© 2025 Future Farming AI</small>
+</footer>
+
+</body>
+</html>

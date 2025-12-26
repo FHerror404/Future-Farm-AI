@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="result-card">
+
+        <h1>Detection Result</h1>
+
+        <p><strong>Crop:</strong> {{ crop }}</p>
+        <p><strong>Disease Detected:</strong> {{ disease }}</p>
+        <p><strong>Detection Method:</strong> {{ method }}</p>
+
+        {% if confidence %}
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+        {% endif %}
+
+     <h3>Uploaded Leaf Image</h3>
+
+<img
+  src="{{ url_for('uploaded_file', filename=image_filename) }}"
+  alt="Uploaded leaf image"
+  style="
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+  "
+>
+
+        <hr>
+
+        <h2>Recommended Actions</h2>
+
+        <div class="recommendation-box">
+            {% if disease != "Healthy" %}
+            <ul>
+                <li>Remove and destroy affected leaves</li>
+                <li>Apply copper-based or recommended fungicide</li>
+                <li>Ensure proper soil drainage</li>
+                <li>Avoid overhead watering</li>
+            </ul>
+            {% else %}
+            <p class="success">No treatment required. Plant is healthy.</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="back-link">← Back to Dashboard</a>
+
+    </div>
+</div>
+
+</body>
+</html>

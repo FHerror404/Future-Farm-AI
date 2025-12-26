@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="container">
+    <h2>Prediction History</h2>
+
+    {% if records %}
+        {% for r in records %}
+        <div class="history-card">
+            <p><strong>Crop:</strong> {{ r.crop }}</p>
+            <p><strong>Disease:</strong> {{ r.disease }}</p>
+            <p><strong>Method:</strong> {{ r.method }}</p>
+
+            {% if r.confidence %}
+            <p><strong>Confidence:</strong> {{ r.confidence }}%</p>
+            {% endif %}
+
+            <p><strong>Time:</strong> {{ r.time }}</p>
+
+            <img
+              src="{{ url_for('uploaded_file', filename=r.image) }}"
+              style="max-width:150px; border-radius:8px;"
+            >
+        </div>
+        <hr>
+        {% endfor %}
+    {% else %}
+        <p>No predictions yet.</p>
+    {% endif %}
+
+    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</div>
+</body>
+</html>
